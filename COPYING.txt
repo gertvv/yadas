@@ -1,0 +1,23 @@
+YADAS
+
+COPYRIGHT NOTICE
+
+Copyright (2003). The Regents of the University of California. This material
+was produced under U.S. Government contract W-7405-ENG-36 for Los Alamos
+National Laboratory, which is operated by the University of California for the
+U.S. Department of Energy. The U.S. Government has rights to use, reproduce,
+and distribute this SOFTWARE. NEITHER THE GOVERNMENT NOR THE UNIVERSITY MAKES
+ANY WARRANTY, EXPRESS OR IMPLIED, OR ASSUMES ANY LIABILITY FOR THE USE OF THIS
+SOFTWARE. If SOFTWARE is modified to produce derivative works, such modified
+SOFTWARE should be clearly marked, so as not to confuse it with the version
+available from LANL.
+
+YADAS SOFTWARE is Open Source Software. You can download it for free. The
+license terms and conditions of use for the YADAS SOFTWARE are in accordance
+with THE ARTISTIC LICENSE as certified by the Open Source Initiative (OSI).
+THIS SOFTWARE IS PROVIDED "AS IS" AND WITHOUT ANY EXPRESS OR IMPLIED
+WARRANTIES, INCLUDING WITHOUT LIMITATION, THE IMPLIED WARRANTIES OF
+MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE.
+
+This software is covered under the ``Artistic License'' as given by the Open
+Source Initiative; see http://www.opensource.org/. 
