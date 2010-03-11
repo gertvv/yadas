@@ -9,6 +9,13 @@
 	<dependencies>
 	</dependencies>
 
+	<distributionManagement>
+		<repository>
+			<id>ssh-drugis.org</id>
+			<url>scpexe://drugis.org/var/www/drugis.org/mvn</url>
+		</repository>
+	</distributionManagement>
+
 	<build>
 		<plugins>
 			<plugin>
