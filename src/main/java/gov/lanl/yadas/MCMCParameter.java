@@ -32,6 +32,7 @@ public class MCMCParameter implements MCMCNode, TunableMCMCUpdate, MCMCOutput {
     public MCMCParameter (double[] v, //int[] gr, 
 			  double[] mss, String name)
     {
+	hasOutput = (name != null);
 	value = v;
 	proposedvalue = new double[v.length];
 	probvalue = new double[v.length];
@@ -51,7 +52,8 @@ public class MCMCParameter implements MCMCNode, TunableMCMCUpdate, MCMCOutput {
 	if (i < mss.length) {
 	    isConstant = false;
 	    try {
-		out = new PrintWriter ( new FileWriter(name + ".out"));
+		if (hasOutput)
+		    out = new PrintWriter ( new FileWriter(name + ".out"));
 	    }
 	    catch (IOException e) {
 		System.out.print("Error: " + e);
@@ -192,13 +194,13 @@ public class MCMCParameter implements MCMCNode, TunableMCMCUpdate, MCMCOutput {
     // obviously there are more elegant ways of writing last three methods
 
     public void output () {
-	if (!isConstant) {
+	if (!isConstant && hasOutput) {
 	    out.println(toString());
 	}
     }
     
     public void updateoutput () {
-	if (firstupdateoutput) {
+	if (firstupdateoutput && hasOutput) {
 	    firstupdateoutput = false;
 	    try {
 		propose_out = new PrintWriter ( new FileWriter
@@ -211,14 +213,14 @@ public class MCMCParameter implements MCMCNode, TunableMCMCUpdate, MCMCOutput {
 		System.exit(1);
 	    }
 	}
-	if (!isConstant) {
+	if (!isConstant && hasOutput) {
 	    propose_out.println(toStringPropose());
 	    prob_out.println(toStringProb());
 	}
     }
 
     public void tuneoutput () {
-	if (!isConstant) {
+	if (!isConstant && hasOutput) {
 	    if (firsttuneoutput) {
 		firsttuneoutput = false;
 		try {
@@ -296,7 +298,7 @@ public class MCMCParameter implements MCMCNode, TunableMCMCUpdate, MCMCOutput {
      * all (sometimes any) of the output.  
      */
     public void finish() {
-	if (!isConstant) {
+	if (!isConstant && hasOutput) {
 	    out.close();
 	    if (!firstupdateoutput) {
 		propose_out.close ();
@@ -363,7 +365,7 @@ public class MCMCParameter implements MCMCNode, TunableMCMCUpdate, MCMCOutput {
     int numbonds;
     
     public double[] MetropolisStepSize;
-    boolean isConstant;
+    boolean isConstant, hasOutput;
     String name;
     public static Random rand = new Random(System.currentTimeMillis());
     
